@@ -1,0 +1,10 @@
+<div class="blog-pagenat-wthree" [hidden]="!isVisible">
+    <ul>
+        <li [class.disabled]="!previousEnabled" (click)="previousNext(-1, $event)"><a class="frist">Prev</a></li>
+        <li *ngFor="let page of pages" (click)="changePage(page, $event)" [class.active]="currentPage === page">
+            <a>{{ page }}</a>
+        </li>
+        <li [class.disabled]="!nextEnabled" (click)="previousNext(1, $event)"><a class="last">Next</a></li>
+    </ul>
+</div>
+

@@ -1,0 +1,6 @@
+.blog-pagenat-wthree ul li.active > a {
+    background-color: #FF8D1B;
+    border: none;
+    border-radius: 0;
+    color: #fff!important;
+}

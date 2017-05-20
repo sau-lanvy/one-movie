@@ -1,0 +1,10 @@
+<div class="general" *ngIf="movies && movies.length > 0">
+  <h4 class="latest-text w3_latest_text">Similar Movies</h4>
+  <div class="container">
+    <div class="w3_agile_featured_movies">
+      <div class="col-md-2 w3l-movie-gride-agile" *ngFor="let movie of movies; let i = index;">
+        <cm-movie-item [movie]="movie"></cm-movie-item>
+      </div>
+    </div>
+  </div>
+</div>

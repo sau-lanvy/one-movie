@@ -1,0 +1,34 @@
+<div class="general">
+    <div class="container">
+        <div class="row" *ngIf="person">
+            <div class="col-md-3">
+                <div class="thumbnail">
+                    <img src="https://image.tmdb.org/t/p/w300/{{person.profile_path}}" *ngIf="person.profile_path">
+                    <img src="assets/no-image.jpg" *ngIf="!person.profile_path">
+                    <div class="caption">
+                        <h4 class="text-ellipsis">
+                            {{person.name}}
+                        </h4>
+                        <p><strong>Birthday: </strong>{{person.birthday}}</p>
+                        <p><strong>Place of Birth: </strong>{{person.place_of_birth}}</p>
+                        <p>
+                            <strong>Popularity</strong>
+                            <small class="label label-success pull-right">
+                            {{person.popularity}}
+                            <i class="glyphicon glyphicon-star"></i>
+                            </small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <h4 class="latest-text w3_latest_text">Movies</h4>
+                <div class="w3_agile_featured_movies">
+                    <div  class="col-md-3 w3l-movie-gride-agile" *ngFor="let movie of movies; let i = index;">
+                        <cm-movie-item [movie]="movie"></cm-movie-item>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

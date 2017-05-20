@@ -1,0 +1,14 @@
+<app-movie-card [movie]="movie" [cast]="cast"></app-movie-card>
+<!--Trailer-->
+<div class="general" *ngIf="video">
+  <h4 class="latest-text w3_latest_text">{{video.name}}</h4>
+  <div class="container">
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" [src]="video.url"></iframe>
+    </div>
+  </div>
+</div>
+<!--Trailer-->
+<!--Similar Movies-->
+<app-movie-similar [movies]="similarMovies"></app-movie-similar>
+<!--Similar Movies-->

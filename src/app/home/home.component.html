@@ -1,0 +1,58 @@
+<div class="general" *ngIf="upComingMovies && upComingMovies.length > 0">
+    <h4 class="latest-text w3_latest_text">Movies</h4>
+    <div class="container">
+        <tabset type="tabs" id="myTab">
+            <tab heading="Up Coming Movies" *ngIf="upComingMovies">
+                <div class="browse-inner">
+                    <div class="col-md-2 w3l-movie-gride-agile" *ngFor="let movie of upComingMovies;">
+                        <cm-movie-item [movie]="movie"></cm-movie-item>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a [routerLink]="['/movies/list','upcoming']" aria-controls="w3bsd">View More</a>
+                </div>
+            </tab>
+            <tab heading="Top Rated" *ngIf="topRatedList">
+                <div class="browse-inner">
+                    <div class="col-md-2 w3l-movie-gride-agile" *ngFor="let movie of topRatedList;">
+                        <cm-movie-item [movie]="movie"></cm-movie-item>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a [routerLink]="['/movies/list','top_rated']" aria-controls="w3bsd">View More</a>
+                </div>
+            </tab>
+            <tab heading="Popular Movies" *ngIf="popularMovies">
+                <div class="browse-inner">
+                    <div class="col-md-2 w3l-movie-gride-agile" *ngFor="let movie of popularMovies;">
+                        <cm-movie-item [movie]="movie"></cm-movie-item>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a [routerLink]="['/movies/list','popular']" aria-controls="w3bsd">View More</a>
+                </div>
+            </tab>
+            <tab heading="Playing Movies" *ngIf="playingMovies">
+                <div class="browse-inner">
+                    <div class="col-md-2 w3l-movie-gride-agile" *ngFor="let movie of playingMovies;">
+                        <cm-movie-item [movie]="movie"></cm-movie-item>
+                    </div>
+                </div>
+                <div class="view-more">
+                    <a [routerLink]="['/movies/list','now_playing']" aria-controls="w3bsd">View More</a>
+                </div>
+            </tab>
+        </tabset>
+
+    </div>
+</div>
+<div class="general" *ngIf="topPopularSeries && topPopularSeries.length > 0">
+    <h4 class="latest-text w3_latest_text">MOST POPULAR SERIES</h4>
+    <div class="container">
+        <div class="w3_agile_featured_movies">
+            <div class="col-md-2 w3l-movie-gride-agile" *ngFor="let movie of topPopularSeries; let i = index;">
+                <cm-movie-item [movie]="movie"></cm-movie-item>
+            </div>
+        </div>
+    </div>
+</div>

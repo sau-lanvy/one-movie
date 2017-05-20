@@ -1,0 +1,12 @@
+div.view-more {
+    float: left;
+    width: 100%;
+}
+.view-more > a{
+    background-color: #FF8D1B;
+    border: none;
+    border-radius: 0;
+    color: #fff!important;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out 0s;
+}

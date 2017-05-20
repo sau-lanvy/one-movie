@@ -1,0 +1,22 @@
+<a href="/movies/{{movie.id}}" class="hvr-shutter-out-horizontal" *ngIf="movie">
+  <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path" title="{{movie.title}}" class="img-responsive"
+    alt=" ">
+  <img src="assets/no-image.jpg" class="img-responsive" *ngIf="!movie.poster_path">
+  <div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+</a>
+<div class="mid-1 agileits_w3layouts_mid_1_home">
+  <div class="w3l-movie-text">
+    <h6 class="text-ellipsis"><a title="{{movie.title}}"> {{movie.title}}</a></h6>
+  </div>
+  <div class="mid-2 agile_mid_2_home">
+    <p><span class="glyphicons glyphicons-calendar x1">{{movie.release_date | date:"dd/MM/yyyy"}}</span></p>
+    <small class="label label-success pull-right" *ngIf="movie.vote_average">
+        {{movie.vote_average}}
+        <i class="glyphicon glyphicon-star"></i>
+      </small>
+    <div class="clearfix"></div>
+  </div>
+</div>
+<div class="ribben" *ngIf="(date | date:'yyyy') == (movie.release_date | date:'yyyy') && movie.release_date">
+  <p>NEW</p>
+</div>

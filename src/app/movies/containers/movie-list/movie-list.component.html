@@ -1,0 +1,23 @@
+<div class="general" *ngIf="movies && movies.length > 0">
+    <h4 class="latest-text w3_latest_text">{{type}}</h4>
+    <div class="container">
+        <div class="agileits-single-top">
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li class="active">Movies</li>
+                <li class="active">{{type}}</li>
+            </ol>
+        </div>
+    </div>
+    <div class="container">
+        <div class="w3_agile_featured_movies">
+            <div class="col-md-2 w3l-movie-gride-agile" *ngFor="let movie of movies; let i = index;">
+                <cm-movie-item [movie]="movie"></cm-movie-item>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <app-pagination [totalItems]="totalRecords" [pageSize]="pageSize" (pageChanged)="pageChanged($event)" *ngIf="totalRecords > 0"></app-pagination>
+    </div>
+</div>
